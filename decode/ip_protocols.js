@@ -1,4 +1,5 @@
-var protocols = new Array(256);
+// var protocols = new Array(256);
+var protocols = {};
 // declare export early to avoid circular dependancy chains
 module.exports = protocols; 
 
@@ -21,5 +22,6 @@ function init(){
   protocols[135] = IpV6HeaderExtension;
   protocols[139] = IpV6HeaderExtension;
   protocols[140] = IpV6HeaderExtension;
+  protocols['GIOP'] = require("./giop");
 }
 init();
